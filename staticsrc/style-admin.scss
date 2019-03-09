@@ -1,0 +1,127 @@
+@import 'style-defs';
+
+// Variables originally from MDL, adjusted here
+$input-text-font-size: 13px !default;
+$input-text-padding: 2px !default;
+$input-text-vertical-spacing: 14px !default;
+
+$input-text-floating-label-fontsize: 11px !default;
+
+#admin {
+  color: #404040;
+}
+
+#adminSemester,
+#adminTraining {
+    > :nth-child(even) {
+        background-color: #f0f0f0;
+    }
+    .semester_new,
+    .training_new {
+        background-color: white;
+    }
+
+    .table-head {
+        font-weight: bold;
+    }
+    .mdl-grid {
+        padding-top: 0;
+        padding-bottom: 0;
+        .mdl-cell {
+            margin-top: 4px;
+            margin-bottom: 4px;
+        }
+    }
+    .semester_new,
+    .semester_edit,
+    .training_new,
+    .training_edit {
+        .mdl-textfield {
+            font-size:$input-text-font-size;
+            width: 100%;
+            padding: 0px;
+            padding-bottom: $input-text-vertical-spacing;
+        }
+        .mdl-textfield__input,
+        .mdl-textfield__label {
+            font-size:$input-text-font-size;
+            top: ($input-text-padding);
+        }
+        .mdl-textfield__label:after {
+            bottom: $input-text-vertical-spacing;
+        }
+        .mdl-textfield__error
+        {
+            font-size: $input-text-floating-label-fontsize;
+        }
+        .mdl-textfield--floating-label.is-focused .mdl-textfield__label,
+        .mdl-textfield--floating-label.is-dirty .mdl-textfield__label
+        {
+            font-size: $input-text-floating-label-fontsize;
+            top: -($input-text-floating-label-fontsize + $input-text-padding);
+        }
+    }
+    .semester_edit.normalMode,
+    .training_edit.normalMode {
+        .mdl-textfield,
+        div.editButtons,
+        .mdl-spinner,
+        select {
+            display: none;
+        }
+    }
+    .semester_edit.editMode,
+    .training_edit.editMode {
+        span.normalMode,
+        div.normalButtons,
+        .mdl-spinner {
+            display: none;
+        }
+    }
+    .semester_edit.waitMode,
+    .training_edit.waitMode {
+        .mdl-textfield,
+        div.editButtons,
+        div.normalButtons,
+        select {
+            display: none;
+        }
+    }
+    .dateTime {
+        text-align:right;
+    }
+    .buttons {
+        vertical-align: top;
+    }
+}
+
+@media screen and (min-width:640px){
+    .editButtons button.small {
+        display: none;
+    }
+}
+
+@media screen and (max-width:639px){
+    .editButtons button.large {
+        display: none;
+    }
+}
+
+span.formDescription {
+    font-size:8pt;
+}
+
+div.info {
+    font-style:italic;
+    color:$colNo;
+}
+
+.list-empty {
+    font-style:italic;
+    color: #808080;
+    text-align: center;
+}
+
+div#loginForm {
+    text-align:center;
+}

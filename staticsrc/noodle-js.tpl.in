@@ -1,0 +1,9 @@
+<script src="@jquery-3.3.1.js@"></script>
+<script src="@jquery.autocomplete.js@"></script>
+{if $query eq 'admin'}
+<script src="@noodle-admin.js@"></script>
+{else}
+<script src="@js.cookie.js@"></script>
+<script src="@noodle.js@"></script>
+<script src="@dialog-polyfill.js@"></script>
+{/if}

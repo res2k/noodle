@@ -1,0 +1,9 @@
+<?php
+
+$periodes_show_timeframe = "+6 months";
+$trainings_show = 4;
+$attributes = array("Damen","Mixed","Open");
+// php -r "echo password_hash('<password>', PASSWORD_DEFAULT);"
+$hash_pass = '$2y$10$dHy361TZfnwy7cR1gob4p.JGIEa7udlclqcKhaZTTySUwjffoL0Ze';
+
+?>

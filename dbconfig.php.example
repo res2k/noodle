@@ -1,0 +1,8 @@
+<?php
+
+// Uncomment & adjust
+//$dbhost = 'localhost';
+//$dbuser = 'user';
+//$dbpassword = 'password';
+//$dbname = 'noodle';
+?>

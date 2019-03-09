@@ -1,0 +1,16 @@
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="icon" sizes="192x192" href="s/favicon_192.png" />
+<link rel="apple-touch-icon" sizes="192x192" href="s/favicon_192.png">
+<meta name="theme-color" content="#795548" />
+<meta name="application-name" content="Noodle"/>
+<meta name="msapplication-TileColor" content="#795548"/>
+<meta name="msapplication-TileImage" content="s/favicon_192.png"/>
+<meta name="msapplication-starturl" content="/">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Noodle">
+<link rel="manifest" href="@web-app-manifest.json@">
+<link rel="stylesheet" href="@material.brown-indigo.css@" /> 
+<meta name="viewport" content="width=device-width, 
+                           initial-scale=1.0">
+<meta charset="utf-8">

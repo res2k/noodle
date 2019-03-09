@@ -1,0 +1,12 @@
+.gitignore
+.git-ftp-ignore
+.git-ftp-include
+Makefile
+deploy-ignore.txt
+*.sql
+img/*
+phpHyphenator/CHANGELOG
+phpHyphenator/example.php
+phpHyphenator/morecss-plugin.php
+staticsrc/*
+tools/*

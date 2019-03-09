@@ -1,0 +1,29 @@
+@import 'style-defs';
+
+body {
+    background-color:$colBG;
+}
+
+.noodle-grid {
+    max-width: 1080px;
+}
+
+.mdl-card.main-card {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.mdl-card.main-card.noscript {
+    min-height: 0;
+    padding: 4px;
+    text-align: center;
+    font-weight: bold;
+    background-color: #ffffcc;
+}
+
+.mdl-navigation__link > .material-icons,
+.mdl-mini-footer--link-list .material-icons {
+    padding-right: 8px;
+    vertical-align: -8px;
+    max-width: 1em;
+}

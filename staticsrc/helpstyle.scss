@@ -1,0 +1,64 @@
+/* sass helpstyle.scss helpstyle.css */ 
+
+@import 'style-common';
+
+.help > .mdl-card__supporting-text {
+    font-size: 14px;
+    line-height: 24px;
+    color: black;
+}
+
+.mdl-layout__header > .mdl-layout__drawer-button {
+    display: none;
+}
+
+.mdl-layout__drawer {
+    display: none;
+}
+
+#my_back_button {
+    display: block;
+}
+
+.square {
+    height:12px;
+    width:12px;
+    display:inline-block;
+    position: relative;
+    top: 4px;
+}
+
+.whiteSquare {
+    @extend .square;
+    border:1px #888 solid;
+    background-color:white;
+}
+.greenSquare {
+    @extend .square;
+    border:1px $colYesFrame solid;
+    background-color:$colYes;
+}
+.yellowSquare {
+    @extend .square;
+    border:1px black solid;
+    background-color:$colMaybe;
+}
+.redSquare {
+    @extend .square;
+    border:1px $colNoFrame solid;
+    background-color:$colNo;
+}
+
+.help .material-icons {
+    font-size: 18px;
+    position: relative;
+    top: 4px;
+}
+
+.mdl-card__actions {
+    text-align: right;
+}
+
+.mdl-card__actions .mdl-button .material-icons {
+    top: 0px;
+}

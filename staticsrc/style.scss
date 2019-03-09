@@ -1,0 +1,424 @@
+/* sass style.scss style.css */ 
+
+@import 'style-common';
+
+.mdl-card.main-card.hsp-info {
+    min-height: 0;
+    padding: 8px;
+    text-align: center;
+    display: inherit;
+    background-color: #ffffee;
+}
+
+.hsp-tag {
+    color: #e00000;
+}
+
+main.mdl-layout__content {
+    z-index: auto;
+}
+
+@media screen and (max-width:479px){
+    .optional-navigation-text {
+        display: none;
+    }
+}
+
+
+#nameContainer {
+    margin-top: -12px;
+}
+
+.name_entry .mdl-card__supporting-text {
+    width: 100%;
+}
+
+#nameContainer > .mdl-textfield {
+    width: calc(100% - 100px);
+}
+
+#nameContainer > .mdl-textfield input {
+    display: inline;
+}
+
+.mdl-textfield__error.force-visible {
+    visibility: visible;
+}
+
+#nameContainer.activ {
+    z-index:3;
+    position:relative;
+}
+
+.catCheck {
+    display: table-cell;
+    padding-right: 1em;
+}
+
+@media screen and (min-width:360px){
+    .catLabel {
+        display: table-cell;
+        padding-right: 1em;
+    }
+}
+
+#catContainer {
+    min-height: 36px; // same as button height; buttons replace categories in rename mode
+}
+
+#catContainer.activ {
+    display:none;
+}
+
+.mdl-card.main-card.semester {
+    width: 100%;
+    margin-bottom: 8px;
+    min-height: 0;
+}
+
+.mdl-card.name_entry {
+    min-height: 0;
+}
+
+#inputName, #dlg_inputName {
+    color: rgba(0, 0, 0, 0.70);
+}
+
+.mdl-textfield__label {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+/* There's a margin between the 'splash' card and the viewport border,
+ * it's 32px in total. Use that to compute the resolution to use */
+$splashMargin: 32px;
+
+.splash {
+    background: url('../Touched_1600.jpg') center 40% / cover;
+}
+
+@media screen and (max-width:(1280px + $splashMargin)) and (max-resolution:1dppx),
+  screen and (max-width:(640px + $splashMargin)) and (max-resolution:2dppx),
+  screen and (max-width:(427px + $splashMargin)) and (max-resolution:3dppx) {
+    .splash {
+        background-image: url('../Touched_1280.jpg');
+    }
+}
+
+@media screen and (max-width:(1080px + $splashMargin)) and (max-resolution:1dppx),
+  screen and (max-width:(540px + $splashMargin)) and (max-resolution:2dppx),
+  screen and (max-width:(360px + $splashMargin)) and (max-resolution:3dppx) {
+    .splash {
+        background-image: url('../Touched_1080.jpg');
+    }
+}
+
+@media screen and (max-width:(800px + $splashMargin)) and (max-resolution:1dppx),
+  screen and (max-width:(400px + $splashMargin)) and (max-resolution:2dppx) {
+    .splash {
+        background-image: url('../Touched_800.jpg');
+    }
+}
+
+@media screen and (max-width:(540px + $splashMargin)) and (max-resolution:1dppx) {
+    .splash {
+        background-image: url('../Touched_540.jpg');
+    }
+}
+
+@media screen and (max-width:(400px + $splashMargin)) and (max-resolution:1dppx) {
+    .splash {
+        background-image: url('../Touched_400.jpg');
+    }
+}
+
+body {
+    padding:0px;
+    margin:0px;
+}
+
+a {
+    text-decoration:none;
+    font-weight:bold;
+    cursor:pointer;
+    color:$colBlue2;
+}
+
+a:hover {
+    color:black;
+}
+
+div.data {
+    padding-left:5px;
+}
+
+table.dateSelect {
+    border-spacing:0px;
+    border-collapse: collapse;
+    width: 100%;
+
+    td, th {
+        padding:10px;
+        padding-top:5px;
+        padding-bottom:5px;
+
+        border-bottom: 1px $colTableSep solid;
+        border-top:1px $colTableSep solid;
+        cursor:pointer;
+        font-size:10pt;
+        color:$colBlue1;
+        text-align:center;
+    }
+
+    td:hover {
+        background-color:$colGrey2;
+        color:black;
+    }
+
+    th {
+        border-top:0px;
+        letter-spacing:1px;
+        vertical-align: bottom;
+    }
+    
+    th button.attend.yes {
+        background-color: $colYesLight;
+    }
+
+    .woyHeader {
+        cursor:default;
+    }
+    .woyHeader:hover {
+        background-color:white;
+    }
+
+
+    td.yes {
+        background-color: $colYes;
+        color:black;
+    }
+    td.yes:hover {
+        background-color: $colYesHover;
+    }
+
+    td.no {
+        background-color: $colNo;
+        color:black;
+    }
+    td.no:hover {
+        background-color: $colNoHover;
+    }
+
+    td.noclick {
+        background-color:$colGrey1;
+        cursor:default;
+        
+    }
+    td.noclick:hover {
+    }
+    
+    td.woy {
+      font-size: 70%;
+    }
+
+}
+
+@media screen and (min-width:598px){
+    table.dateSelect th button.attend.small,
+    .mdl-tooltip.training-info-tooltip,
+    .training-day.small
+    {
+        display: none;
+    }
+}
+
+@mixin dateselect-small() {
+    th button.attend.large
+    {
+        display: none;
+    }
+    th button.attend.small
+    {
+        display: block;
+    }
+    td, th
+    {
+        padding: 5px;
+    }
+}
+
+table.dateSelect.days-count-5
+{
+    @include dateselect-small();
+}
+
+// 'Small' displays/smartphone portrait
+@media screen and (max-width:597px){
+    table.dateSelect th button.attend.large,
+    .training-name,
+    .training-day.large
+    {
+        display: none;
+    }
+    table.dateSelect.days-count-6
+    {
+        button.attend.small.mdl-button--mini-fab
+        {
+            height: 30px;
+            min-width: 30px;
+            width: 30px;
+        }
+    }
+}
+
+// Very small displays
+@media screen and (max-width:359px){
+    table.dateSelect.days-count-6
+    {
+        margin-left: -5px;
+
+        td, th
+        {
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+    }
+}
+
+
+div.training {
+    margin-bottom: 8px;
+    width: 100%;
+    min-height: auto;
+  
+    div.date {
+        letter-spacing:1px;
+        padding-bottom: 0;
+    }
+
+    div.hsp {
+        padding-top: 0;
+
+        .hsp-tag {
+            opacity: 0.54;
+        }
+    }
+
+    div.title {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    div.participants {
+        padding-top: 8px;
+        margin: -1px 0 10px;
+        font-size:10pt;
+
+        .p {
+            padding-top:5px;
+            padding-bottom:5px;
+            margin-top:-0px;
+            margin-bottom:0px;
+        }
+        
+        .participants_yes {
+            color: $colYesText;
+        }
+
+        .participants_no {
+            color: $colNoText;
+        }
+        
+        .number_yes, .number_no {
+            cursor:pointer;
+            font-weight:bold;
+        }
+        .number_yes:hover, .number_no:hover {
+            background-color:$colGrey2;
+        }
+
+        .expanded-yes::before, .expanded-no::before {
+            font-family: 'Material Icons';
+            -webkit-font-feature-settings: 'liga';
+            font-feature-settings: 'liga' 1;
+            vertical-align: -2pt;
+            -moz-font-feature-settings: 'liga';
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .expanded-yes::before {
+            content: ""; // U+E5CE, expand_less
+        }
+
+        .expanded-no::before {
+            content: ""; // U+E5CF, expand_more
+        }
+        
+        .participants-outer {
+            padding-left: 16px;
+        }
+        
+        .participants-inner {
+            display: none;
+        }
+
+        .mdl-progress {
+            width: 100%;
+            margin-top: -4px;
+            visibility: hidden;
+        }
+
+        .mdl-progress.is-active {
+            visibility: visible;
+        }
+
+        .participants-inner.expanded {
+            display: inline;
+        }
+    }
+
+}
+
+div.autocomplete-suggestions {
+    background-color:#fff;
+    border:1px #ccc solid;
+    padding-top:3px;
+    padding-bottom:3px;
+    cursor:pointer;
+    color: #888;
+}
+div.autocomplete-suggestion {
+    padding-left:3px;
+
+    strong {
+        font-weight: normal;
+        color: black;
+    }
+}
+div.autocomplete-selected {
+    background-color:rgb(83,109,254); /* material design indigo */
+    color: rgb(164, 182, 255);
+
+    strong {
+        font-weight: normal;
+        color: white;
+    }
+}
+
+div.p {
+    padding:5px;
+}
+
+button.optional {
+    display:none;
+}
+
+button.optional.activ {
+    display:inline;
+}
+
+
+.time {
+    font-weight:normal;
+    font-size:9pt;
+    letter-spacing:0px;
+}
