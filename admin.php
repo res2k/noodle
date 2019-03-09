@@ -45,3 +45,4 @@ if ( $login == true )
     $smarty->assign('days', $tage);
 }
 
+$smarty->assign('feedback_mail', $feedback_mail);

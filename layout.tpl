@@ -33,7 +33,7 @@
   <div class="mdl-logo">{$silly_strings[{0|rand:{$silly_strings|@count}}]}</div>
   <div class="mdl-mini-footer--left-section">
     <ul class="mdl-mini-footer--link-list">
-      <li><a href="mailto:---"><i class="material-icons">email</i>Feedback</a></li>
+      {if $feedback_mail}<li><a href="mailto:{$feedback_mail}"><i class="material-icons">email</i>Feedback</a></li>{/if}
       <li><a href=".?q=admin"><i class="material-icons">settings</i>Admin</a></li>
     </ul>
   </div>

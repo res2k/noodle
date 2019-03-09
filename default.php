@@ -146,5 +146,4 @@ foreach ( $next_trainings as $training )
 
 $smarty->assign('upcoming', $upcoming);
 
-
-
+$smarty->assign('feedback_mail', $feedback_mail);
