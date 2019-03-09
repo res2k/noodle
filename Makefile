@@ -22,6 +22,7 @@ SRC = staticsrc
 TMP = tmp
 
 $(TMP)/%.css: $(SRC)/%.scss
+	mkdir -p $(dir $@)
 	sass $< $@
 
 tmp/style.css: $(SRC)/style.scss $(SRC)/style-common.scss $(SRC)/style-defs.scss
