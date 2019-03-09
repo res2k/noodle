@@ -1,4 +1,6 @@
 <?php
+ob_start("ob_gzhandler");
+
 require("config.php");
 require_once("Smarty/libs/Smarty.class.php");
 
