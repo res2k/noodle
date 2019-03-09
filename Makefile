@@ -5,6 +5,8 @@ all_templates = noodle-css.tpl noodle-js.tpl help-css.tpl help-js.tpl head-commo
 dev prod: %: $(addprefix %.tmp/,$(all_templates))
 	for t in $(all_templates) ; do cp -p $*.tmp/$$t . ; done
 
+dev: templates_c
+
 collect-deploy: $(addprefix prod.tmp/,$(all_templates))
 	mkdir -p prod.tmp/deploy
 	rm -rf prod.tmp/deploy/*
@@ -17,6 +19,11 @@ deploy-gitftp: collect-deploy
 
 push: prod deploy-gitftp
 	git-ftp push -s master
+
+# Template cache for testing in-place
+templates_c:
+	mkdir templates_c
+	chmod a+w templates_c/
 
 SRC = staticsrc
 TMP = tmp
