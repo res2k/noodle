@@ -28,7 +28,7 @@ $days_string = implode($days['days'],"','");
 
 $sql = "SELECT * FROM `user`
     LEFT JOIN attendance ON user.name = attendance.user
-    WHERE user.trainings LIKE \"%\\\"".$tid."\\\":\\\"yes\\\"%\"
+    WHERE attendance.tid = ".$tid."
         AND attendance.date IN ('".$days_string."')
     ORDER BY `name`,`date`
 ";
