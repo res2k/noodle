@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Noodleexport</title>
-<meta charset="utf-8">
+<title>Noodle-Export</title>
+{include file="head-common.tpl"}
+{include file="export-css.tpl"}
 </head>
 <body>
 <table border="1">
     <tr>
-        <td>&nbsp;</td>
+        <th>&nbsp;</th>
         {foreach $datesF as $date}
-            <td>{$date}</td>
+            <th>{$date}</th>
         {/foreach}
     </tr>
 {foreach $users as $user}
@@ -17,15 +18,16 @@
     <tr>
         <td>{$user}</td>
         {foreach $dates as $date}
-            <td align="center">
-                {if array_key_exists($date, $row)}
-                    {$row.$date}
-                {/if}
-            </td>
+            {if array_key_exists($date, $row)}
+            <td align="center" class="attendance-{$row.$date.type}">{$row.$date.symbol}</td>
+            {else}
+            <td></td>
+            {/if}
         {/foreach}
     </tr>
 {/foreach} 
 </table>
+{include file='foot-common.tpl'}
 </body>
 </html>
 

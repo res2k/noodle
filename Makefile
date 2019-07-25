@@ -1,6 +1,6 @@
 .PHONY: dev prod prod-clean collect-deploy deploy-gitftp
 
-all_templates = noodle-css.tpl noodle-js.tpl help-css.tpl help-js.tpl head-common.tpl foot-common.tpl
+all_templates = noodle-css.tpl noodle-js.tpl help-css.tpl help-js.tpl head-common.tpl foot-common.tpl export-css.tpl
 
 dev prod: %: $(addprefix %.tmp/,$(all_templates))
 	for t in $(all_templates) ; do cp -p $*.tmp/$$t . ; done
@@ -50,6 +50,9 @@ dev.tmp/noodle-css.tpl: $(SRC)/noodle-css.tpl.in $(TMP)/style.css $(TMP)/style-a
 dev.tmp/help-css.tpl: $(SRC)/help-css.tpl.in $(TMP)/helpstyle.css
 	python tools/staticprep.py --prep-dir s/g/ --output-file $@ --template $^ 
 
+dev.tmp/export-css.tpl: $(SRC)/export-css.tpl.in $(TMP)/export.css
+	python tools/staticprep.py --prep-dir s/g/ --output-file $@ --template $^
+
 dev.tmp/noodle-js.tpl: $(SRC)/noodle-js.tpl.in $(foreach js,$(NOODLE_JS), $(SRC)/$(js).js) $(JQUERY_JS) $(JQUERY_AUTOCOMPLETE_JS)
 	python tools/staticprep.py --prep-dir s/g/ --output-file $@ --template $^ 
 
@@ -73,6 +76,9 @@ prod.tmp/noodle-css.tpl: $(SRC)/noodle-css.tpl.in $(TMP)/style.min.css $(TMP)/st
 
 prod.tmp/help-css.tpl: $(SRC)/help-css.tpl.in $(TMP)/helpstyle.min.css
 	python tools/staticprep.py --prep-dir s/g/ --output-file $@ --template $^ 
+
+prod.tmp/export-css.tpl: $(SRC)/export-css.tpl.in $(TMP)/export.min.css
+	python tools/staticprep.py --prep-dir s/g/ --output-file $@ --template $^
 
 prod.tmp/noodle-js.tpl: $(SRC)/noodle-js.tpl.in $(foreach js,$(NOODLE_JS), $(TMP)/$(js).min.js) $(JQUERY_MIN_JS) $(JQUERY_AUTOCOMPLETE_MIN_JS)
 	python tools/staticprep.py --prep-dir s/g/ --output-file $@ --template $^ 

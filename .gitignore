@@ -13,6 +13,7 @@ help-js.tpl
 foot-common.tpl
 noodle-css.tpl
 noodle-js.tpl
+export-css.tpl
 s/g
 s/g/*.css
 s/g/*.js

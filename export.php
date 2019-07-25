@@ -47,13 +47,14 @@ $users = array();
 while ( $row = mysqli_fetch_array($result))
 {
     if ( $row['type'] == 'yes' )
-        $symbol = 'X';
+        $symbol = 'J';
     elseif ( $row['type'] == 'no' )
-         $symbol = '-';
+         $symbol = 'n';
     else
         $symbol = '';
 
-    $tbl[$row['name']][$row['date']] = $symbol;
+    $tbl[$row['name']][$row['date']]['symbol'] = $symbol;
+    $tbl[$row['name']][$row['date']]['type'] = $row['type'];
     $users[] = $row['name'];
 }
 
