@@ -42,8 +42,8 @@ while ( $row = mysqli_fetch_array($result))
 {
     if ( $row['type'] == 'yes' )
         $symbol = 'X';
-    elseif ( $row['type'] == 'maybe' )
-         $symbol = '(X)';
+    elseif ( $row['type'] == 'no' )
+         $symbol = '-';
     else
         $symbol = '';
 
