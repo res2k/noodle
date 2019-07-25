@@ -1,0 +1,15 @@
+@import 'style-defs';
+
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid #c0c0c0;
+    padding: 2pt;
+}
+
+td.attendance-yes {
+    background-color: $colYes;
+} 
+
+td.attendance-no {
+    background-color: $colNo;
+}
