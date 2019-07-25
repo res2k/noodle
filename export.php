@@ -10,6 +10,12 @@ date_default_timezone_set('Europe/Berlin');
 
 $link = mysqli_connect ($dbhost,$dbuser,$dbpassword,$dbname);
 
+/* change character set to utf8mb4 */
+if (!$link->set_charset("utf8mb4")) {
+    printf("Error loading character set utf8mb4: %s\n", $link->error);
+    exit();
+}
+
 $tid = filter_var($_GET['tid']);
 
 $sql = "SELECT * FROM `training`
