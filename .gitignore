@@ -1,3 +1,4 @@
+config.php
 dbconfig.php
 templates_c/*
 .sass-cache
