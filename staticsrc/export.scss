@@ -1,5 +1,13 @@
 @import 'style-defs';
 
+html{
+    color: revert;
+}
+
+body{
+    margin: revert;
+}
+
 table, th, td {
     border-collapse: collapse;
     border: 1px solid #c0c0c0;
@@ -7,9 +15,11 @@ table, th, td {
 }
 
 td.attendance-yes {
+    color: black;
     background-color: $colYes;
 } 
 
 td.attendance-no {
+    color: black;
     background-color: $colNo;
 }
