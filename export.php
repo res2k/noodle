@@ -23,7 +23,7 @@ $from = $row['from'];
 $to = $row['to'];
 $dow = $row['day'];
 
-$days = noodle_create_calendar($from,$to,array($dow));
+$days = noodle_create_calendar($from,$to,array($dow),$tid);
 $days_string = implode($days['days'],"','");
 
 $sql = "SELECT * FROM `user`
