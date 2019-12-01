@@ -1,0 +1,85 @@
+#inputName, #dlg_inputName {
+    color: $colInputName;
+}
+
+.mdl-card.main-card.hsp-info {
+    background-color: $colImportantBG;
+}
+
+div.autocomplete-suggestions {
+    background-color:$autocompleteBG;
+    border:1px $autocompleteBorder solid;
+    color: #888;
+}
+div.autocomplete-suggestion {
+    strong {
+        color: $autocompleteSuggestHighlight;
+    }
+}
+div.autocomplete-selected {
+    background-color: $autocompleteSelectBG;
+    color: $autocompleteSelectText;
+
+    strong {
+        color: $autocompleteSelectHighlight;
+    }
+}
+
+div.training {
+    div.participants {
+        .participants_yes {
+            color: $colYesText;
+        }
+
+        .participants_no {
+            color: $colNoText;
+        }
+
+        .number_yes:hover, .number_no:hover {
+            background-color:$colGrey2;
+        }
+    }
+}
+
+table.dateSelect {
+    td, th {
+        border-bottom-color: $colTableSep;
+        border-top-color: $colTableSep;
+        color:$colBlue1;
+    }
+
+    td:hover {
+        background-color:$colGrey2;
+        color:black;
+    }
+
+    th button.attend.yes {
+        background-color: $colYesLight;
+    }
+
+    .woyHeader:hover {
+        background-color:white;
+    }
+
+
+    td.yes {
+        background-color: $colYes;
+        color:black;
+    }
+    td.yes:hover {
+        background-color: $colYesHover;
+    }
+
+    td.no {
+        background-color: $colNo;
+        color:black;
+    }
+    td.no:hover {
+        background-color: $colNoHover;
+    }
+
+    td.noclick {
+        background-color:$colGrey1;
+    }
+
+}

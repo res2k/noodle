@@ -1,8 +1,5 @@
+$dark-theme: false;
 @import 'style-defs';
-
-body {
-    background-color:$colBG;
-}
 
 .noodle-grid {
     max-width: 1080px;
@@ -26,4 +23,79 @@ body {
     padding-right: 8px;
     vertical-align: -8px;
     max-width: 1em;
+}
+
+@import 'style-common-colors';
+
+@media (prefers-color-scheme: dark) {
+    html {
+        color:rgba(255,255,255,.87);
+    }
+
+    $dark-theme: true;
+
+    @import 'style-defs';
+    @import 'style-common-colors';
+
+    .mdl-card {
+        background-color:#111;
+        &__title-text {
+            color:#bbb;
+        }
+        &__supporting-text {
+            color:rgba(255,255,255,.54);
+        }
+    }
+
+    .mdl-checkbox {
+        &__box-outline {
+            border: 2px solid rgba(255,255,255,.54);
+        }
+    }
+
+    .mdl-layout {
+        &__drawer {
+            background: #050505;
+            border-right-color: #444;
+            color: #b0b0b0;
+        }
+        &__drawer .mdl-navigation .mdl-navigation__link:hover {
+            background: #222;
+        }
+
+        &__header, &__header &__drawer-button {
+            color: black;
+        }
+        &__header-row .mdl-navigation__link {
+            color: rgb(0,0,0);
+        }
+    }
+
+    .mdl-logo {
+        color: black;
+    }
+
+    .mdl-progress > .bufferbar{
+        background: transparent;
+    }
+
+    .mdl-textfield {
+        &__label {
+            color: rgba(255, 255, 255, 0.54);
+        }
+        &__input {
+            border-bottom-color: rgba(255,255,255,.12);
+        }
+    }
+
+    hr {
+        border-top-color: #444;
+    }
+
+    dialog {
+        background: black;
+        color: white;
+    }
+
+    $dark-theme: false;
 }

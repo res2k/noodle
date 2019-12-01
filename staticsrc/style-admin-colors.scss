@@ -1,0 +1,10 @@
+#adminSemester,
+#adminTraining {
+    > :nth-child(even) {
+        background-color: $colAdminEven;
+    }
+    .semester_new,
+    .training_new {
+        background-color: $colAdminNew;
+    }
+}

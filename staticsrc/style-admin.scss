@@ -1,3 +1,5 @@
+$dark-theme: false;
+
 @import 'style-defs';
 
 // Variables originally from MDL, adjusted here
@@ -13,14 +15,6 @@ $input-text-floating-label-fontsize: 11px !default;
 
 #adminSemester,
 #adminTraining {
-    > :nth-child(even) {
-        background-color: #f0f0f0;
-    }
-    .semester_new,
-    .training_new {
-        background-color: white;
-    }
-
     .table-head {
         font-weight: bold;
     }
@@ -124,4 +118,15 @@ div.info {
 
 div#loginForm {
     text-align:center;
+}
+
+@import 'style-admin-colors';
+
+@media (prefers-color-scheme: dark) {
+    $dark-theme: true;
+
+    @import 'style-defs';
+    @import 'style-admin-colors';
+
+    $dark-theme: false;
 }

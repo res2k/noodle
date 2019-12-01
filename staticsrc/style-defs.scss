@@ -27,3 +27,49 @@ $colDelete: $colNo;
 
 $colTableSep: #a0a0a0;
 
+$colInputName: rgba(0, 0, 0, 0.70);
+
+$autocompleteBG: #fff;
+$autocompleteBorder: #ccc;
+$autocompleteSuggestHighlight: black;
+$autocompleteSelectBG: rgb(83,109,254); /* material design indigo */
+$autocompleteSelectText: rgb(164, 182, 255);
+$autocompleteSelectHighlight: white;
+
+$colImportantBG: #ffffee;
+
+$colAdminEven: #f0f0f0;
+$colAdminNew: white;
+
+@if $dark-theme {
+    $colYes: #347a46;
+    $colYesHover: #35AA47;
+    $colYesLight: #3f6d3f;
+    $colYesText: #247330;
+    $colNo: #784444;
+    $colNoHover: #D84A38;
+    $colNoText: #8d3024;
+
+    $colBlue1: #295d91;
+    $colBlue2: #083475;
+
+    $colGrey2: #303030;
+
+    $colBG: #353535;
+    
+    $colTableSep: #404040;
+
+    $colInputName: rgba(255, 255, 255, 0.70);
+
+    $autocompleteBG: #000;
+    $autocompleteBorder: #444;
+    $autocompleteSuggestHighlight: white;
+    $autocompleteSelectBG: #212b65;
+    $autocompleteSelectText: #525b80;
+    $autocompleteSelectHighlight: white;
+
+    $colImportantBG: #95952a;
+
+    $colAdminEven: #222;
+    $colAdminNew: black;
+}

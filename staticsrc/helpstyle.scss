@@ -62,3 +62,9 @@
 .mdl-card__actions .mdl-button .material-icons {
     top: 0px;
 }
+
+@media (prefers-color-scheme: dark) {
+    .help > .mdl-card__supporting-text {
+        color: #eeeeee;
+    }
+}

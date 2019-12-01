@@ -32,9 +32,9 @@ $(TMP)/%.css: $(SRC)/%.scss
 	mkdir -p $(dir $@)
 	sass $< $@
 
-tmp/style.css: $(SRC)/style.scss $(SRC)/style-common.scss $(SRC)/style-defs.scss
-tmp/style-admin.css: $(SRC)/style-admin.scss $(SRC)/style-defs.scss
-tmp/helpstyle.css: $(SRC)/helpstyle.scss $(SRC)/style-common.scss $(SRC)/style-defs.scss
+tmp/style.css: $(SRC)/style.scss $(SRC)/style-colors.scss $(SRC)/style-common.scss $(SRC)/style-common-colors.scss $(SRC)/style-defs.scss
+tmp/style-admin.css: $(SRC)/style-admin.scss $(SRC)/style-admin-colors.scss $(SRC)/style-defs.scss
+tmp/helpstyle.css: $(SRC)/helpstyle.scss $(SRC)/style-common.scss $(SRC)/style-common-colors.scss $(SRC)/style-defs.scss
 
 JQUERY_JS = $(SRC)/jquery/jquery-3.3.1.js
 JQUERY_MIN_JS = $(SRC)/jquery/jquery-3.3.1.min.js
