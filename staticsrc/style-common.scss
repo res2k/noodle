@@ -38,7 +38,7 @@ $dark-theme: false;
     @import 'style-common-colors';
 
     .mdl-card {
-        background-color:#111;
+        background-color: $cardBG;
         &__title-text {
             color:#bbb;
         }

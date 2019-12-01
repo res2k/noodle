@@ -41,6 +41,8 @@ $colImportantBG: #ffffee;
 $colAdminEven: #f0f0f0;
 $colAdminNew: white;
 
+$cardBG: white;
+
 @if $dark-theme {
     $colYes: #347a46;
     $colYesHover: #35AA47;
@@ -53,6 +55,7 @@ $colAdminNew: white;
     $colBlue1: #295d91;
     $colBlue2: #083475;
 
+    $colGrey1: #202020;
     $colGrey2: #303030;
 
     $colBG: #353535;
@@ -72,4 +75,6 @@ $colAdminNew: white;
 
     $colAdminEven: #222;
     $colAdminNew: black;
+
+    $cardBG: #111;
 }
