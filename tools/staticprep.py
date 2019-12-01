@@ -3,6 +3,7 @@ import argparse
 import base64
 import gzip
 import hashlib
+import io
 import json
 import os
 import shutil
@@ -11,7 +12,7 @@ import sys
 # Compute hash code for file
 def file_hash(file_data):
     hash_data = hashlib.md5(file_data).digest()
-    return base64.urlsafe_b64encode(hash_data).rstrip('=')
+    return base64.urlsafe_b64encode(hash_data).decode('ascii').rstrip('=')
 
 # Computes 'substitution key' by removing .min part from filename
 def substitution_key(filename):
@@ -56,10 +57,10 @@ for f in args.input_files:
     generated_files.setdefault(dest_path_gz, []).append(f)
 
 # Write list of generated files
-with open(args.output_file + '.gen', 'wb') as list_file:
+with io.open(args.output_file + '.gen', 'w', encoding='utf-8') as list_file:
     json.dump(generated_files, list_file, indent=2)
 
-template_data = open(args.template, 'rb').read()
+template_data = open(args.template, 'rb').read().decode('utf-8')
 new_data = ''
 # Replace placeholders in template
 while template_data != '':
@@ -77,5 +78,5 @@ while template_data != '':
     else:
         new_data = new_data + files_map[key]
     template_data = template_data[ph_end+1:]
-with open(args.output_file, 'wb') as out_file:
+with io.open(args.output_file, 'w', encoding='utf-8') as out_file:
     out_file.write (new_data)
