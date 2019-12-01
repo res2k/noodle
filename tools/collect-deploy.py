@@ -48,10 +48,10 @@ for prep_file_name in args.staticprep_files:
     make_process = subprocess.Popen(' '.join (['make', '-s', '-n', '-B', '--trace', prep_file_name]),
                                     shell=True, stdout=subprocess.PIPE)
     for line in make_process.stdout:
-        line = line.strip()
+        line = line.decode('utf-8').strip()
         if line.startswith("Makefile:"):
             # Extract part after first ' '
-            message = unicode(line.split(' ', 1)[1])
+            message = line.split(' ', 1)[1]
             dep_match = make_dependency_re.match(message)
             if dep_match:
                 deps = set(dep_match.group(2).split())
@@ -59,24 +59,24 @@ for prep_file_name in args.staticprep_files:
 
     # Inject 'dependency' of extradeploy files on produced file
     for extradeploy in args.extradeploy:
-        dep_tree.setdefault(unicode(extradeploy), set()).add(unicode(prep_file_name))
+        dep_tree.setdefault(extradeploy, set()).add(prep_file_name)
 
     # Read generated files, add as dependencies
     generated_files = {}
     with open(prep_file_name + '.gen') as prep_file_generated:
         generated_files = json.load(prep_file_generated)
 
-    for generated, deps in generated_files.iteritems():
+    for generated, deps in generated_files.items():
         dep_tree.setdefault(generated, set()).update(deps)
 
     # Determine tracked files
     all_deps = set()
-    for file, deps in dep_tree.iteritems():
+    for file, deps in dep_tree.items():
         all_deps = all_deps | deps
     tracked_deps = filter_untracked(all_deps)
 
     # Generate deployment info
-    for to_deploy in generated_files.keys() + args.extradeploy:
+    for to_deploy in list(generated_files.keys()) + args.extradeploy:
         deploy_dep = resolve_dependencies(dep_tree, to_deploy)
         deploy_dep = filter(lambda f: f in tracked_deps, deploy_dep)
         deploy_files.setdefault(to_deploy, []).extend(deploy_dep)

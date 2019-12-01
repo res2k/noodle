@@ -12,6 +12,6 @@ args = parser.parse_args()
 for deploy_file in args.deploy_files:
     with (sys.stdin if deploy_file == "-" else open(deploy_file, "r")) as input_file:
         deploy_files = json.load(input_file)
-        for to_deploy, deps in deploy_files.iteritems():
+        for to_deploy, deps in deploy_files.items():
             for dep in deps:
                 print('{0}:{1}'.format (to_deploy, dep))
