@@ -1,4 +1,4 @@
-{if not $query eq 'admin'}
+{if $query neq 'admin'}
 <link rel="stylesheet" type="text/css" href="@dialog-polyfill.css@" />
 {/if}
 <link rel="stylesheet" type="text/css" href="@style.css@">
