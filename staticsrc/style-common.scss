@@ -37,6 +37,12 @@ $dark-theme: false;
     @import 'style-defs';
     @import 'style-common-colors';
 
+    .mdl-button {
+        &--raised, &:hover {
+            background: rgba(255,255,255,0.4);
+        }
+    }
+
     .mdl-card {
         background-color: $cardBG;
         &__title-text {
