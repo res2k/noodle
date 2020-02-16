@@ -19,7 +19,7 @@
     </div>
 </div>
 <div class="userAttributes data" id="catContainer">
-    <div class="catLabel">Turniere:</div>
+    <div class="catLabel">DFV-Turniere:</div>
     {foreach $user.attributes as $attribute => $value}
         <div class="catCheck">
             <label id="attr_{$attribute}" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="attr_{$attribute}_check">
