@@ -5,6 +5,7 @@
 $user = array('name' => '');
 $user['attendance'] = noodle_get_attendance($user['name']);
 
+$user['attributes_label'] = $attributes_label;
 $user['attributes'] = array_flip($attributes);
 
 // $user_attributes = noodle_get_attributes($user);
