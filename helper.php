@@ -363,6 +363,7 @@ function noodle_get_participants($day, $tid)
         ORDER BY type DESC, LOWER(user.name)
     ");
 
+    global $attributes;
     $erg = array();
     $nYes = 0;
     $nMaybe = 0;
@@ -378,6 +379,7 @@ function noodle_get_participants($day, $tid)
 
         $attrArray = json_decode($row['attributes'],true);
         $attr = array_keys($attrArray,'yes');
+        $attr = array_intersect($attr, $attributes);
         asort($attr);
         $attr = array_values($attr);
         $erg[] = array(
